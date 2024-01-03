@@ -1,3 +1,6 @@
+import FacebookEmbed from './components/FacebookEmbed'
+
 export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
+    return Promise.resolve(a * b)
 }
+export { FacebookEmbed }

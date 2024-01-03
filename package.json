@@ -70,6 +70,7 @@
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-builder-bob": "^0.20.0",
+    "react-native-webview": "^13.6.4",
     "release-it": "^15.0.0",
     "typescript": "^5.0.2"
   },
@@ -78,7 +79,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-webview": ">=7.0.0"
   },
   "workspaces": [
     "example"
@@ -126,9 +128,14 @@
       "prettier/prettier": [
         "error",
         {
-          "quoteProps": "consistent",
+          "arrowParens": "always",
+          "bracketSameLine": true,
+          "bracketSpacing": true,
+          "printWidth": 100,
           "singleQuote": true,
-          "tabWidth": 2,
+          "semi": false,
+          "tabWidth": 4,
+          "quoteProps": "consistent",
           "trailingComma": "es5",
           "useTabs": false
         }
@@ -140,9 +147,14 @@
     "lib/"
   ],
   "prettier": {
-    "quoteProps": "consistent",
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "printWidth": 100,
     "singleQuote": true,
-    "tabWidth": 2,
+    "semi": false,
+    "tabWidth": 4,
+    "quoteProps": "consistent",
     "trailingComma": "es5",
     "useTabs": false
   },
