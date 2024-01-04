@@ -6,6 +6,7 @@ export const generateFacebookEmbedHtml = (url: string): string => {
         <!DOCTYPE html>
         <html>
           <head>
+          <title>Facebook</title>
             <meta
               name="viewport"
               content="width=device-width"
