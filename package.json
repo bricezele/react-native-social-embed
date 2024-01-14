@@ -171,5 +171,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-autoheight-webview": "^1.6.5"
   }
 }
