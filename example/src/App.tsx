@@ -1,12 +1,16 @@
 import * as React from 'react'
 
-import { StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import { FacebookEmbed } from 'react-native-social-embed'
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
+        <View style={styles.centered}>
+            <ScrollView contentContainerStyle={styles.container}>
+                <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
+                <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
+                <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
+            </ScrollView>
         </View>
     )
 }
@@ -16,7 +20,10 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 200,
+    },
+    centered: {
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     box: {
         width: 60,
