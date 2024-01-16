@@ -8,8 +8,6 @@ export default function App() {
         <View style={styles.centered}>
             <ScrollView contentContainerStyle={styles.container}>
                 <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
-                <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
-                <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
             </ScrollView>
         </View>
     )
