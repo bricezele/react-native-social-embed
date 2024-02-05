@@ -15,6 +15,7 @@ const EmbedWebView: React.FC<WebViewProps> = ({ ...props }) => {
             bounces={false}
             viewportContent={'width=device-width, user-scalable=no'}
             containerStyle={[styles.containerStyle, props.containerStyle]}
+            style={props.style}
             {...props}
         />
     )
