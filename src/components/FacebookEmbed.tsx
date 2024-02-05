@@ -22,6 +22,9 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({ url, ...props }) => {
 
 const styles = StyleSheet.create({
     webView: { backgroundColor: 'transparent' },
+    containerStyle: {
+        flex: 1,
+    },
 })
 
 export default FacebookEmbed
