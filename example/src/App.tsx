@@ -8,6 +8,7 @@ export default function App() {
         <View style={styles.centered}>
             <ScrollView contentContainerStyle={styles.container}>
                 <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
+                <FacebookEmbed url="https://www.facebook.com/AfriqueMedia/videos/conference-de-presse-dabdoulaye-diop-laction-diplomatique-malienne-quelle-strat%C3%A9/1736492460178652/" />
             </ScrollView>
         </View>
     )
@@ -15,11 +16,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
     centered: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
