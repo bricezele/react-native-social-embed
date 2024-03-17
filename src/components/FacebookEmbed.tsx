@@ -13,6 +13,7 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
     showText = true,
     ...props
 }) => {
+    // TODO ADD SCRIPT TO AUTO ADJUST IFRAME WIDTH
     const htmlEmbedCode = useMemo(
         () =>
             generateFacebookEmbedHtml({
@@ -35,9 +36,6 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
 
 const styles = StyleSheet.create({
     webView: { backgroundColor: 'transparent' },
-    containerStyle: {
-        flex: 1,
-    },
 })
 
 export default FacebookEmbed
