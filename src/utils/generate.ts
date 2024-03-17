@@ -1,5 +1,12 @@
 import { facebookRegex } from '../data/validator/facebookRegex'
 
+export type FacebookParams = {
+    url: string
+    showText?: boolean
+    lazy?: boolean
+    width?: number
+}
+
 export const generateEmbedHtml = (body: string): string => {
     return `
         <!DOCTYPE html>
@@ -21,13 +28,20 @@ export const generateEmbedHtml = (body: string): string => {
 `
 }
 
-export const generateFacebookEmbedHtml = (url: string): string => {
+export const generateFacebookEmbedHtml = ({
+    lazy,
+    showText,
+    width,
+    url,
+}: FacebookParams): string => {
     if (url.match(facebookRegex)) {
         let body = `
           <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
           <div class="fb-post"
               data-href="${url}"
-              data-width="500"></div>`
+              data-width="${width}"
+              data-lazy="${lazy}"
+              data-show-text="${showText}"></div>`
 
         return generateEmbedHtml(body)
     } else {

@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import type { WebViewProps } from 'react-native-webview'
-import { generateFacebookEmbedHtml } from '../utils/generate'
+import { type FacebookParams, generateFacebookEmbedHtml } from '../utils/generate'
 import EmbedWebView from './EmbedWebView'
 import { StyleSheet } from 'react-native'
 
-type FacebookEmbedProps = Omit<WebViewProps, 'source'> & {
-    url: string
-}
+type FacebookEmbedProps = Omit<WebViewProps, 'source'> & FacebookParams
 
-const FacebookEmbed: React.FC<FacebookEmbedProps> = ({ url, ...props }) => {
-    const htmlEmbedCode = generateFacebookEmbedHtml(url)
+const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
+    url,
+    width = 500,
+    lazy = false,
+    showText = true,
+    ...props
+}) => {
+    const htmlEmbedCode = useMemo(
+        () =>
+            generateFacebookEmbedHtml({
+                lazy,
+                showText,
+                width,
+                url,
+            }),
+        [lazy, showText, width, url]
+    )
 
     return (
         <EmbedWebView
