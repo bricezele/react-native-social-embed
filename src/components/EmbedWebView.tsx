@@ -10,7 +10,7 @@ const EmbedWebView: React.FC<WebViewProps> = ({ ...props }) => {
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
             scalesPageToFit
-            webviewDebuggingEnabled={__DEV__}
+            webviewDebuggingEnabled
             bounces={false}
             viewportContent={'width=device-width, user-scalable=no'}
             {...props}
