@@ -1,8 +1,10 @@
-import React, { useMemo } from 'react'
-import type { WebViewProps } from 'react-native-webview'
+import React, { useMemo, useRef } from 'react'
+import type { WebViewNavigation, WebViewProps } from 'react-native-webview'
 import { type FacebookParams, generateFacebookEmbedHtml } from '../utils/generate'
 import EmbedWebView from './EmbedWebView'
 import { StyleSheet } from 'react-native'
+import type AutoHeightWebView from 'react-native-autoheight-webview'
+import { FACEBOOK_EMBED_INJECTED_SCRIPT } from '../utils/webscript'
 
 type FacebookEmbedProps = Omit<WebViewProps, 'source'> & FacebookParams
 
@@ -13,7 +15,7 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
     showText = true,
     ...props
 }) => {
-    // TODO ADD SCRIPT TO AUTO ADJUST IFRAME WIDTH
+    const webViewRef = useRef<AutoHeightWebView>(null)
     const htmlEmbedCode = useMemo(
         () =>
             generateFacebookEmbedHtml({
@@ -25,8 +27,14 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
         [lazy, showText, width, url]
     )
 
+    const onNavigationStateChange = (navState: WebViewNavigation): void => {
+        if (!navState.loading) webViewRef.current?.injectJavaScript(FACEBOOK_EMBED_INJECTED_SCRIPT)
+    }
+
     return (
         <EmbedWebView
+            ref={webViewRef}
+            onNavigationStateChange={onNavigationStateChange}
             style={[styles.webView, props.style]}
             {...props}
             source={{ html: htmlEmbedCode }}
