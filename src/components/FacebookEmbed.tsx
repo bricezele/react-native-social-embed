@@ -37,6 +37,7 @@ const FacebookEmbed: React.FC<FacebookEmbedProps> = ({
             onNavigationStateChange={onNavigationStateChange}
             style={[styles.webView, props.style]}
             {...props}
+            webviewDebuggingEnabled
             source={{ html: htmlEmbedCode }}
         />
     )

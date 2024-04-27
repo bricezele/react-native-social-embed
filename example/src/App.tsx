@@ -9,8 +9,8 @@ export default function App() {
             <ScrollView contentContainerStyle={styles.container}>
                 <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/451971596293956" />
                 <FacebookEmbed url="https://www.facebook.com/andrewismusic/posts/479747760183006" />
-                <FacebookEmbed url="https://www.facebook.com/AfriqueMedia/videos/conference-de-presse-dabdoulaye-diop-laction-diplomatique-malienne-quelle-strat%C3%A9/1736492460178652/" />
-                <FacebookEmbed url="https://www.facebook.com/reel/901293808392114" />
+                <FacebookEmbed url="https://www.facebook.com/TF1/videos/446997414358194" />
+                <FacebookEmbed url="https://www.facebook.com/reel/976108007224050" />
             </ScrollView>
         </View>
     )

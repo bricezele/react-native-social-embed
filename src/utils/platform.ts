@@ -12,4 +12,4 @@ export const fullHeight = Dimensions.get('screen').height
 // when the screen is folded/unfolded
 // (https://stackoverflow.com/questions/65485878/react-native-samsung-one-ui-3-0-dimensions-screen-width-not-returning-correct-va)
 
-export const fullWidth = Dimensions.get('window').width
+export const fullWidth = Dimensions.get('screen').width

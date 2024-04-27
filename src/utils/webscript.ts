@@ -42,19 +42,15 @@ export const FACEBOOK_EMBED_INJECTED_SCRIPT = `
         const updateCssJson = {
           ...cssJson,
           width: '${fullWidth}px',
-          height: updateHeight + 'px'
         };
         return jsonToCssString(updateCssJson);
       }
 
 
       function iFrameLoaded() {
-          const intervalID = setInterval(() => {
-            var iframe = document.querySelector('iframe');
-            if (iframe.readyState === 'complete') {
-              iframe.style = facebookCssEmbed(iframe.attributes.style.textContent);
-            }
-          }, 100);
+          var iframe = document.querySelector('iframe');
+          //alert(facebookCssEmbed(iframe.attributes.style.textContent));
+          iframe.style = facebookCssEmbed(iframe.attributes.style.textContent);
       }
 
       function checkIfIframeExist(interval, callback) {
