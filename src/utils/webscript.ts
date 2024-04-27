@@ -39,6 +39,7 @@ export const FACEBOOK_EMBED_INJECTED_SCRIPT = `
         const width = parseInt(cssJson.width, 10);
         const height = parseInt(cssJson.height, 10);
         const updateHeight = (height * ${fullWidth}) / width;
+        }, 5000);
         const updateCssJson = {
           ...cssJson,
           width: '${fullWidth}px',
@@ -68,7 +69,12 @@ export const FACEBOOK_EMBED_INJECTED_SCRIPT = `
       }
 
       function onLoad() {
-        checkIfIframeExist(100, iFrameLoaded);
+        try {
+          checkIfIframeExist(100, iFrameLoaded);
+        } catch(error) {
+
+        }
+
       }
 
 
